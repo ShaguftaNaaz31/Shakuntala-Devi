@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #333;
+  color: #222;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.container {
+  background-color: #fafafa;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.container.show-nav {
+  transform: rotate(5deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  background-color: #d47ae8;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-100deg);
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: #fff;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+nav {
+  position: fixed;
+  top: 0.5px;
+  right: 9rem;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-right: 30px;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  transform: translateY(-250%);
+  transition: transform 0.4s ease-in;
+}
+
+nav ul li i {
+  font-size: 20px;
+  margin-bottom: 1px;
+}
+
+nav ul li + li {
+  margin-left: 150px;
+  transform: translateY(-350%);
+}
+
+nav ul li + li + li {
+  margin-left: 300px;
+  transform: translateY(-400%);
+}
+
+nav ul li + li + li + li {
+  margin-left: 500px;
+  transform: translateY(-600%);
+}
+
+nav a {
+  color: #fafafa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+nav a:hover {
+  color: #d47ae8;
+  font-weight: bold;
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.content h1 {
+  margin: 0;
+}
+
+.content small {
+  color: #555;
+  font-style: italic;
+}
+
+.content p {
+  color: #333;
+  line-height: 1.5;
+}
+
+a#tribute-link {
+  text-decoration: none;
+  color: #c931eb;
+}
+
+/* table */
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1em;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: #d47ae8;
+  color: #fff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  text-align: justify;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #d47ae8;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #d47ae8;
+}
+
+.styled-table tbody td ul {
+  padding: 0;
+}
+
+.styled-table tbody td ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+/* division padding */
+
+.div-padding {
+  padding: 7% 15%;
+}
+
+div a#up {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  width: 70px;
+  height: 70px;
+  background-color: #d47ae8;
+  border-radius: 50px;
+  text-align: center;
+  color: #fff;
+  border: 0;
+  font-size: 36px;
+  cursor: pointer;
+  box-shadow: 2px 2px 3px #999;
+}
+
+i.fa-arrow-up {
+  margin: 15px 0 0 0;
+}
+
+/* Books */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.scaled:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* footer */
+#footer {
+  text-align: center;
+  padding: 2px;
+  background-color: #d47ae8;
+  color: white;
+  font-size: 20px;
+}
